@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+::selection {
+  @apply bg-brand-200 text-brand-700;
+}
+
+/* thin, unobtrusive scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-slate-300);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-slate-400);
+}
+
+@layer components {
+  .btn-primary {
+    @apply flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-br from-brand-600 to-violet-600 px-3.5 py-2 text-sm font-medium text-white shadow-md shadow-brand-600/30 transition hover:shadow-lg hover:shadow-brand-600/40 active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100;
+  }
+}
